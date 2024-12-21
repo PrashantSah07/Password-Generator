@@ -24,7 +24,19 @@ togglebtn.addEventListener('click', function () {
 });
 
 
+let changeColor = 0;
+let h1Txt = document.querySelector('h1');
 
+setInterval(function () {
+    if (changeColor < 360) {
+        changeColor += 1
+        h1Txt.style.background = `linear-gradient(${changeColor}deg, rgba(0, 221, 255, 1) 25%, rgba(1, 7, 245, 1) 42%, rgba(255, 0, 78, 1) 63%, rgba(0, 255, 2, 1) 100%)`;
+        h1Txt.style.webkitBackgroundClip = "text";
+        h1Txt.style.color = "transparent";
+    } else {
+        changeColor = -1;
+    }
+}, 12);
 
 
 let btn = document.querySelector('button');
