@@ -39,7 +39,16 @@ setInterval(function () {
 }, 12);
 
 
-let btn = document.querySelector('button');
+
+let copyTxt = document.querySelector('#copyTxt');
+copyTxt.addEventListener('click', function () {
+    let a = span.textContent;
+    navigator.clipboard.writeText(a.substring(1, a.length - 1));
+})
+
+
+
+let btn = document.querySelectorAll('button')[1];
 let span = document.querySelector('span')
 let Password;
 
@@ -49,7 +58,8 @@ class password {
     }
 
     generateStrongPassword() {
-        span.style.color = "rgb(16, 186, 11)"
+        span.style.color = "rgb(16, 186, 11)";
+        copyTxt.style.display = 'flex';
         let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
         let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '~', '/'];
         let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -78,7 +88,8 @@ class password {
 
 
     generateWeakPassword() {
-        span.style.color = "rgb(16, 186, 11)"
+        span.style.color = "rgb(16, 186, 11)";
+        copyTxt.style.display = 'flex';
         let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
         let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -100,7 +111,8 @@ class password {
 
 
     generateFunnyPassword() {
-        span.style.color = "rgb(16, 186, 11)"
+        span.style.color = "rgb(16, 186, 11)";
+        copyTxt.style.display = 'flex';
         let funnyPasswords = [
             "Password123!", "OpenSesame!", "NotAPassword", "ILovePizza1", "GuessMeIfYouCan",
             "12345Wrong", "WhySoSerious?", "MonkeyBusiness007", "CantTouchThis!", "LetMeInPlz",

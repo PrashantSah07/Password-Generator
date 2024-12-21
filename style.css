@@ -40,7 +40,7 @@
 .pass {
     border: 2px solid rgb(159, 161, 161);
     border-radius: 10px;
-    padding: 20px 0;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -55,9 +55,10 @@
 
 .pass p {
     text-align: center;
+    position: relative;
 }
 
-.pass button {
+.pass #btn {
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
@@ -68,14 +69,26 @@
     font-family: "Poppins", serif;
 }
 
-.pass span {
-    font-weight: bold;
-    color: rgb(16, 186, 11);
+.pass #copyTxt {
+    background-color: rgb(221, 227, 229);
+    padding: 5px 3px;
+    border-radius: 5px;
+    position: absolute;
+    top: -20px;
+    right: -35px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
-.pass .form {}
+.pass span {
+    font-weight: bold;
+    color: rgb(85, 87, 85);
+}
 
-.pass button:active {
+.pass #btn:active {
     background-color: rgb(206, 206, 228);
     transform: scale(0.9);
     transition: 0.2s;
@@ -89,6 +102,15 @@
     .pass .form {
         text-align: center;
         padding: 0 20px;
+    }
+
+}
+
+@media only screen and (max-width:650px) {
+
+    .pass #copyTxt {
+        top: -30px;
+        right: 6px;
     }
 }
 
